@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ../template/head.ejs %>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <%- include ../template/navigation.ejs %>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Corporate</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- Corporate Detail Page -->
+            <div class="row">
+              <div class="col-lg-12">
+                <% if (message.length > 0) { %>
+                    <div class="alert alert-success"><%= message %></div>
+                <% } %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Corporate Detail
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                          <tbody>
+                              <tr>
+                                  <th>Corporate Name</th>
+                                  <td><%= corporateDetail[0].name %></td>
+                              </tr>
+                              <tr>
+                                  <th>Address</th>
+                                  <td><%= corporateDetail[0].address %></td>
+                              </tr>
+                              <tr>
+                                  <th>Logo</th>
+                                  <td>
+                                    <img class="img-thumbnail" width="100px" src="<%=logoUrl%>" />
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>Phone Number</th>
+                                  <td><%= corporateDetail[0].phone %></td>
+                              </tr>
+                              <tr>
+                                  <th>Email</th>
+                                  <td><%= corporateDetail[0].email %></td>
+                              </tr>
+                              <tr>
+                                  <th>Date Created</th>
+                                  <td> <% if(corporateDetail[0].dt_created) { %><%= moment(corporateDetail[0].dt_created).format("DD-MMM-YYYY hh:mm:ss") %> <% } %></td>
+                              </tr>
+                              <tr>
+                                  <th>Created By</th>
+                                  <td><%= corporateDetail[0].createdBy %></td>
+                              </tr>
+                              <tr>
+                                  <th>Date Updated</th>
+                                  <td> <% if(corporateDetail[0].dt_updated) { %><%= moment(corporateDetail[0].dt_updated).format("DD-MMM-YYYY hh:mm:ss") %> <% } %></td>
+                              </tr>
+                              <tr>
+                                  <th>Updated By</th>
+                                  <td><%= corporateDetail[0].updatedBy %></td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="/admin/corporateemp/edit?corpId=<%=user.corpId%>" class="btn btn-default">Edit</a>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <%- include ../template/tail.ejs %>
+
+</body>
+
+</html>
