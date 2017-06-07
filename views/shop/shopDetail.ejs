@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ../template/head.ejs %>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <%- include ../template/navigation.ejs %>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Shop</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <!-- Corporate Detail Page -->
+            <div class="row">
+              <div class="col-lg-12">
+                <% if (message.length > 0) { %>
+                    <div class="alert alert-success"><%= message %></div>
+                <% } %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Shop Detail
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                          <tbody>
+                              <tr>
+                                  <th>Name</th>
+                                  <td><%= shopDetail[0].name %></td>
+                              </tr>
+                              <tr>
+                                  <th>Address</th>
+                                  <td><%= shopDetail[0].address %></td>
+                              </tr>
+                              <tr>
+                                  <th>Mobile Phone</th>
+                                  <td><%= shopDetail[0].phone_mobile %></td>
+                              </tr>
+                              <tr>
+                                  <th>Shop Phone</th>
+                                  <td><%= shopDetail[0].phone_shop %></td>
+                              </tr>
+                              <tr>
+                                  <th>Email</th>
+                                  <td><%= shopDetail[0].email %></td>
+                              </tr>
+                              <tr>
+                                  <th>Date Created</th>
+                                  <td><%= moment(shopDetail[0].dt_created).format("YYYY-MM-DD") %></td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="/admin/shop/edit%>" class="btn btn-default">Edit</a>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <%- include ../template/tail.ejs %>
+    <script>
+    $(document).ready(function() {
+      $('#dataTables-example').DataTable({
+          responsive: true,
+          "columnDefs": [
+            { "width": "30%", "targets": 0 }
+          ]
+      });
+        $('#dataTables-project-list').DataTable({
+            responsive: true,
+            "columnDefs": [
+              { "width": "30%", "targets": 0 }
+            ]
+        });
+
+    });
+    </script>
+
+</body>
+
+</html>

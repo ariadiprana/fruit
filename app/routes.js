@@ -1,6 +1,9 @@
 // app/routes.js
 module.exports = function(app, passport) {
 
+	const productController = require('./controllers/product.js')
+	const shopController = require('./controllers/shop.js')
+
 	const corporateController = require('./controllers/corporate.js')
 	const corporateUserController = require('./controllers/corporateuser.js')
 	const projectController = require('./controllers/project.js')
@@ -15,6 +18,25 @@ module.exports = function(app, passport) {
 
 	// =====================================
 	// modules
+
+	//FRUIT - START
+	// product
+	app.get('/admin/product/list', isLoggedIn, productController.getList)
+	app.get('/admin/product/add', isLoggedIn, productController.getAdd)
+	app.get('/admin/product/edit/:id', isLoggedIn, productController.getEdit)
+	app.get('/admin/product/delete/:id', isLoggedIn, productController.deleteProduct)
+	app.get('/admin/product/detail/:id', isLoggedIn, productController.detailProduct)
+	app.post('/admin/product/add', isLoggedIn, productController.postAdd)
+	app.post('/admin/product/edit', isLoggedIn, productController.postEdit)
+
+	// shop
+	app.get('/admin/shop', isLoggedIn, shopController.getDetail)
+	app.get('/admin/shop/edit', isLoggedIn, shopController.getEdit)
+	app.post('/admin/shop/add', isLoggedIn, shopController.postAdd)
+	app.post('/admin/shop/edit', isLoggedIn, shopController.postEdit)
+
+	//FRUIT - END
+
 
 	// corporate for super admin
 	app.get('/admin/corporate/list', isLoggedIn, corporateController.getList)

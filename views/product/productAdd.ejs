@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ../template/head.ejs %>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <%- include ../template/navigation.ejs %>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Product</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+              <form action="/admin/product/add" method="post">
+                <div class="col-lg-12">
+                  <% if (message.length > 0) { %>
+                    <% for(var i=0; i<message.length; i++) { %>
+                      <div class="alert alert-danger"><%= message[i] %></div>
+                    <% } %>
+                  <% } %>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Add Product
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" placeholder="Name" id="name" name="name" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea id="Description" placeholder="Description" name="description" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Unit</label>
+                                            <select class="form-control" name="tipe_satuan_id">
+                                                <% for(var i=0; i<tipeSatuanList.length; i++) { %>
+                                                    <option value=<%= tipeSatuanList[i].id %>> <%= tipeSatuanList[i].name%> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price</label>
+                                            <input type="text" placeholder="Price" id="price" name="price" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Category</label>
+                                            <select class="form-control" name="category_id">
+                                                <% for(var i=0; i<categoryList.length; i++) { %>
+                                                    <option value=<%= categoryList[i].id %>> <%= categoryList[i].name%> </option>
+                                                <% } %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Minimum Buy</label>
+                                            <input type="text" placeholder="Minimum Buy" id="min_buy" name="min_buy" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Stock Status</label>
+                                            <select class="form-control" name="status_stok">
+                                                <option value="Ready Stock">Ready Stock</option>
+                                                <option value="Out of Stock">Out of Stock</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <button type="submit" class="btn btn-default">Add</button>
+                    <a href="/admin/product/list" class="btn btn-default">Back</a>
+                </div>
+                <!-- /.col-lg-12 -->
+              </form>
+              <!-- /form -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <%- include ../template/tail.ejs %>
+
+</body>
+
+</html>

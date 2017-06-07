@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include ../template/head.ejs %>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <%- include ../template/navigation.ejs %>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Product</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+              <form action="/admin/product/add" method="post">
+                <div class="col-lg-12">
+                  <% if (message.length > 0) { %>
+                    <% for(var i=0; i<message.length; i++) { %>
+                      <div class="alert alert-danger"><%= message[i] %></div>
+                    <% } %>
+                  <% } %>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Product Detail
+                        </div>
+                        <div class="panel-body">
+                          <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                              <tbody>
+                                  <tr>
+                                      <th>Name</th>
+                                      <td><%= productDetail[0].name %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Description</th>
+                                      <td><%= productDetail[0].description %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Unit</th>
+                                      <td><%= productDetail[0].tipe_satuan_name %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Price</th>
+                                      <td><%= productDetail[0].price %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Category</th>
+                                      <td><%= productDetail[0].category_name %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Minimum Buy</th>
+                                      <td><%= productDetail[0].min_buy %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Stok Status</th>
+                                      <td><%= productDetail[0].status_stok %></td>
+                                  </tr>
+                                  <tr>
+                                      <th>Date Created</th>
+                                      <td><%= moment(productDetail[0].dt_created).format("YYYY-MM-DD") %></td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- /.panel -->
+                    <a href="/admin/product/edit/<%= productDetail[0].id%>%>" class="btn btn-default">Edit</a>
+                    <a href="/admin/product/list" class="btn btn-default">Back</a>
+                </div>
+                <!-- /.col-lg-12 -->
+              </form>
+              <!-- /form -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <%- include ../template/tail.ejs %>
+
+</body>
+
+</html>
