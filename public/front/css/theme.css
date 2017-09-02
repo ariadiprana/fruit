@@ -102,6 +102,10 @@ input:hover {
 .white {
   color: #fff;
 }
+
+.red {
+  color: #e2211d;
+}
 .black {
   color: #333;
 }
@@ -110,6 +114,9 @@ input:hover {
 }
 .smoke {
   color: #ccc;
+}
+.green {
+  color: #67c177;
 }
 .bg-white {
   background: #fff;
@@ -539,7 +546,7 @@ div.table > div {
 }
 /*End Banner Adv*/
 /*******************************************************************************************************
-										Preview	Menu				
+										Preview	Menu
 ********************************************************************************************************/
 .main-nav > ul > li .sub-menu > li.menu-item-preview {
   position: relative;
@@ -2004,7 +2011,7 @@ a.post-cat {
   margin-left: 80px;
 }
 .newsletter-box {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 .inner-newsletter .title30 i {
   margin-right: 10px;
@@ -2137,7 +2144,7 @@ a.post-cat {
   margin-top: 20px;
 }
 /**************************************************************************************************
-											Home 2			
+											Home 2
 **************************************************************************************************/
 .dropdown-box {
   position: relative;
@@ -3385,7 +3392,7 @@ body .shop-button {
 }
 .footer-top3 {
   background: #fafcfc;
-  padding: 40px 0 40px;
+  padding: 20px 0 40px;
 }
 .footer-box3 .title30 {
   margin-bottom: 17px;
@@ -3425,7 +3432,7 @@ body .shop-button {
   margin-top: 10px;
 }
 /****************************************************************************************************
-											Home 4	
+											Home 4
 ****************************************************************************************************/
 .main-header.bg-color2 .search-form {
   border-color: #fff;
@@ -3705,9 +3712,9 @@ body .shop-button {
   background: #3b3b3b;
 }
 .content-top5 {
-  padding: 30px 0;
+  padding: 10px 0;
   background: #f9f9f9;
-  margin-bottom: 34px;
+  margin-bottom: 10px;
 }
 .list-adv-right5 {
   margin-left: -30px;
@@ -3734,14 +3741,14 @@ body .shop-button {
 }
 .item-adv5 .banner-info {
   top: auto;
-  padding-bottom: 25px;
+  padding-bottom: 12px;
   transform: translateY(65px);
   -webkit-transform: translateY(65px);
   transition: all 0.5s ease-out 0s;
   -webkit-transition: all 0.5s ease-out 0s;
 }
 .item-adv5 .banner-info .product-price {
-  margin: 8px 0 16px;
+  margin: 0px 0 16px;
   transition: all 0.5s ease-out 0s;
   -webkit-transition: all 0.5s ease-out 0s;
 }
@@ -4035,7 +4042,7 @@ body .shop-button {
   margin-bottom: 50px;
 }
 /*************************************************************************************************
-										Detail					
+										Detail
 **************************************************************************************************/
 .related-product > h2.title30 {
   margin-bottom: 22px;
