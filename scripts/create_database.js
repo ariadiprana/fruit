@@ -1,4 +1,4 @@
-/**
+/*
  * Created by barrett on 8/28/14.
  */
 
@@ -141,28 +141,4 @@ CREATE TABLE `' + dbconfig.database + '`.`' + 'ORDER' + '` ( \
 )');
 
 console.log('Success: TABLE ORDER is Created!')
-
-connection.query("INSERT INTO `fruit`.`user`(`id`,`username`,`password`,`fullName`, `phone`)VALUES('1','a','$2a$10$qJcRyPSQJ1XWHgY9H6yZyeufYnhWJnTCYt/ldltSx63a4uY8Xg35S','Ari Adiprana','081932377341');");
-console.log('Success: INSERT INTO TABLE USER!')
-
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('01','Fresh Fruit','Buah Segar',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('02','Fresh Vegetable','Sayuran Segar',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('03','Fresh Herbs','Bumbu Segar',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('04','Meat','Aneka Daging',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('05','Seafood','Boga Bahari',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('06','Egg & Diary','Telur & Susu',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('07','Pantry','Bahan Dapur',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('08','Frozen','Makanan Beku',1);");
-connection.query("INSERT INTO `fruit`.`mt_category`(`id`,`name`,`desc`,`created_by`)VALUES('09','Bakery','Roti',1);");
-console.log('Success: INSERT INTO TABLE MT_CATEGORY!')
-
-connection.query("INSERT INTO `fruit`.`mt_tipe_satuan`(`id`,`name`,`desc`,`created_by`)VALUES('01','Kg','Kilogram',1);");
-connection.query("INSERT INTO `fruit`.`mt_tipe_satuan`(`id`,`name`,`desc`,`created_by`)VALUES('02','Kardus','Kardus',1);");
-connection.query("INSERT INTO `fruit`.`mt_tipe_satuan`(`id`,`name`,`desc`,`created_by`)VALUES('03','Peti','Peti',1);");
-connection.query("INSERT INTO `fruit`.`mt_tipe_satuan`(`id`,`name`,`desc`,`created_by`)VALUES('04','Bungkus','Bungkus',1);");
-connection.query("INSERT INTO `fruit`.`mt_tipe_satuan`(`id`,`name`,`desc`,`created_by`)VALUES('05','Ekor','Ekor',1);");
-
-console.log('Success: INSERT INTO TABLE MT_TIPE_SATUAN!')
-
-
 connection.end();

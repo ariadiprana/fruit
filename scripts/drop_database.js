@@ -8,7 +8,7 @@ var dbconfig = require('../config/database');
 var connection = mysql.createConnection(dbconfig.connection);
 
 connection.query('DROP DATABASE ' + dbconfig.database);
-console.log('Success: Database Dropped!')
+console.log('Success: Database Dropped!');
 
 
 connection.end();
