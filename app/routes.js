@@ -11,13 +11,18 @@ module.exports = function(app, passport) {
 	const corporateEmpController = require('./controllers/corporateemp.js')
 	const mapfloorController = require('./controllers/mapfloor.js')
 
+	const userController = require('./controllers/user.js')
+
 	// =====================================
 	// home screen
 	// =====================================
-	app.get('/', function(req, res) { res.render('app/index.ejs'); });
+	app.get('/', function(req, res) { res.render('app/index-2.ejs'); });
 
 	// =====================================
 	// modules
+
+	//Grandmarket
+	app.post('/api/v1/user/signup', userController.addUser)
 
 	//FRUIT - START
 	// product
