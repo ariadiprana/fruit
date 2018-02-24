@@ -17,12 +17,13 @@ module.exports = function(app, passport) {
 	// home screen
 	// =====================================
 	app.get('/', function(req, res) { res.render('app/index-2.ejs'); });
-
 	// =====================================
 	// modules
 
 	//Grandmarket
-	app.post('/api/v1/user/signup', userController.addUser)
+	app.post('/api/v1/user/signup', userController.signup)
+	app.post('/api/v1/user/signin', userController.signin)
+	app.post('/api/v1/user/checktoken', userController.checkToken)
 
 	//FRUIT - START
 	// product
