@@ -12,6 +12,7 @@ module.exports = function(app, passport) {
 	const mapfloorController = require('./controllers/mapfloor.js')
 
 	const userController = require('./controllers/user.js')
+	const addressController = require('./controllers/address.js')
 
 	// =====================================
 	// home screen
@@ -24,6 +25,7 @@ module.exports = function(app, passport) {
 	app.post('/api/v1/user/signup', userController.signup)
 	app.post('/api/v1/user/signin', userController.signin)
 	app.post('/api/v1/user/checktoken', userController.checkToken)
+	app.post('/api/v1/user/address/add', addressController.addAddressByUserId)
 
 	//FRUIT - START
 	// product
